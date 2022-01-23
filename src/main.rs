@@ -1,3 +1,6 @@
+use std::fs::File;
+use std::io::{BufWriter, Write};
+
 fn mandelbrot(r: f32, i: f32) -> u32 {
     let mut r0: f32 = 0.0;
     let mut i0: f32 = 0.0;
@@ -24,4 +27,7 @@ fn main() {
             ms[_i][_r] = mandelbrot(r, i)
         }
     }
+    let file = File::create("mandelbrot.bin").expect("Unable to create file");
+    let mut file = BufWriter::new(file);
+    file.write(&ms.to_ne_bytes());
 }
