@@ -1,4 +1,4 @@
-fn mandelbrot(r: f32, i: f32) -> u32{
+fn mandelbrot(r: f32, i: f32) -> u32 {
     let mut r0: f32 = 0.0;
     let mut i0: f32 = 0.0;
     let mut c: u32 = 0;
@@ -12,7 +12,6 @@ fn mandelbrot(r: f32, i: f32) -> u32{
         r0 = t;
     }
     return c;
-
 }
 
 fn main() {
